@@ -3,111 +3,100 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formularios</title>
-    <link rel="stylesheet" href="estilos.css">
+    <title>Catálogo - Polideportivo</title>
+    <link rel="stylesheet" href="css/estilos.css">
 </head>
 
 <body>
-
-    <h1>Inscripción a 3C Vibes</h1>
-    <p>BIENVENIDO! <br> Por favor, completa el siguiente formulario para inscribirte en 3C Vibes.</p>
-    <p>BIENVE <br> te formulario para</p>
-    <p>TEST! <br> PRUEBA.</p>
-
-    
-
-    <form>
-        <div>
-            <label for="nombre">Nombre completo: </label>
-            <input class="escrito" type="text" id="nombre" name="nombre" required /> (obligatorio)
-            <br>
+    <header>
+        <h1>Catálogo de Pistas</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="carrito.html">Mi Reserva</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="alerta-prototipo">
+            Prototipo: la búsqueda, los filtros y la paginación todavía no modifican los resultados.
         </div>
 
-        <div>
-            <label for="pulsera">Nombre en la pulsera: </label>
-            <input type="text" id="pulsera" name="pulsera">
-            <br>
-        </div>
-
-        <div>
-            <label for="edad">Edad: </label>
-            <input type="number" id="edad" name="edad" />
-            <br>
-        </div>
-
-        <div class="artista">
-            <label for="comprobar">Comprobar inscripción: </label>
-            <input type="submit" id="comprobar" name="comprobar" value="Comprobar" />
-
-        </div>
-
-        <div>
-            <label for="correo">Correo electrónico: </label>
-            <input type="email" id="correo" name="correo" placeholder="persona@email.com" required /> (obligatorio)
-            <br>
-        </div>
-
-        <div>
-            <label for="telefono">Teléfono de contacto: </label>
-            <input type="tel" id="telefono" name="telefono" required /><br>
-        </div>
-
-        <div>
-            <label for="entradas">Numero de entradas (entre 1 y 4 entradas): </label>
-            <input type="number" id="entradas" name="entradas" min="1" max="4" required /> (obligatorio)
-            <br>
-        </div>
-
-        <fieldset>
-            <legend>Tipo de entrada</legend>
-            <div>
-                <label for="entrada1">Entrada de día</label>
-                <input type="radio" id="dia" name="tipo_entrada" value="dia" required />
+        <section class="filtros">
+            <div class="campo">
+                <label for="buscador">Buscar pista:</label>
+                <input type="text" id="buscador" placeholder="Ej. Fútbol">
             </div>
-            <div>
-                <label for="entrada2">Abono completo</label>
-                <input type="radio" id="abono" name="tipo_entrada" value="abono" />
+            <div class="campo">
+                <label for="superficie">Superficie:</label>
+                <select id="superficie">
+                    <option>Césped artificial</option>
+                    <option>Parqué</option>
+                    <option>Tierra batida</option>
+                </select>
             </div>
-        </fieldset>
+            <button type="button" class="btn">Aplicar filtros</button>
+            <p>Mostrando 1-6 de 18 resultados</p>
+        </section>
 
-        <fieldset>
-            <legend>Servicios opcionales</legend>
-            <label>Camping</label>
-            <input type="checkbox" id="camping" name="servicios" value="camping" />
-            <label>Autobús</label>
-            <input type="checkbox" id="autobus" name="servicios" value="autobus" />
-        </fieldset>
+        <section class="catalogo-grid">
+            <!-- Ficha 1 (Con enlace de detalle válido) -->
+            <article class="tarjeta">
+                <img src="img/futsal.jpg" alt="Pista exterior de Fútbol Sala">
+                <h3>Pista Fútbol Sala</h3>
+                <p>Pista exterior reglamentaria de césped artificial.</p>
+                <p class="precio">15€ / hora</p>
+                <a href="detalle.html" class="btn">Ver detalles</a>
+            </article>
+            <!-- Ficha 2 -->
+            <article class="tarjeta">
+                <img src="img/f7.jpg" alt="Campo de Fútbol 7">
+                <h3>Campo Fútbol 7</h3>
+                <p>Campo iluminado para entrenamientos y partidos.</p>
+                <p class="precio">25€ / hora</p>
+                <button type="button" class="btn">No disponible</button>
+            </article>
+            <!-- Ficha 3 -->
+            <article class="tarjeta">
+                <img src="img/padel.jpg" alt="Pista de Pádel de cristal">
+                <h3>Pista de Pádel</h3>
+                <p>Pista de cristal outdoor.</p>
+                <p class="precio">12€ / hora</p>
+                <button type="button" class="btn">No disponible</button>
+            </article>
+            <!-- Ficha 4 -->
+            <article class="tarjeta">
+                <img src="img/tenis.jpg" alt="Pista de Tenis de resina">
+                <h3>Pista de Tenis</h3>
+                <p>Superficie rápida de resina sintética.</p>
+                <p class="precio">10€ / hora</p>
+                <button type="button" class="btn">No disponible</button>
+            </article>
+            <!-- Ficha 5 -->
+            <article class="tarjeta">
+                <img src="img/natacion.jpg" alt="Piscina municipal cubierta">
+                <h3>Piscina Cubierta</h3>
+                <p>Calle libre para natación 25m.</p>
+                <p class="precio">4€ / sesión</p>
+                <button type="button" class="btn">No disponible</button>
+            </article>
+            <!-- Ficha 6 -->
+            <article class="tarjeta">
+                <img src="img/atletismo.jpg" alt="Pista de Atletismo de tartán">
+                <h3>Pista de Atletismo</h3>
+                <p>Acceso a pista de tartán de 400m.</p>
+                <p class="precio">3€ / sesión</p>
+                <button type="button" class="btn">No disponible</button>
+            </article>
+        </section>
 
-        <label>Día de llegada (Obligatorio)</label>
-        
-        <select name="dia" id="dia" required>
-            <option value="">Elige un día</option>
-            <option value="viernes">Viernes</option>
-            <option value="sabado">Sábado</option>
-
-
-
-        </select>
-
-        <br>
-        <button id="enviar" type="submit">Enviar</button>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    </form>
-
+        <section class="paginacion" style="margin-top: 2rem; display:flex; gap:1rem;">
+            <button type="button" class="btn">&laquo; Anterior</button>
+            <span style="padding: 0.5rem; font-weight: bold; border-bottom: 2px solid var(--color-primario);">Página
+                1</span>
+            <button type="button" class="btn">Siguiente &raquo;</button>
+        </section>
+    </main>
 </body>
 
 </html>

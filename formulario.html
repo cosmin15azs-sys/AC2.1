@@ -3,111 +3,87 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formularios</title>
-    <link rel="stylesheet" href="estilos.css">
+    <title>Solicitar Reserva</title>
+    <link rel="stylesheet" href="css/estilos.css">
 </head>
 
 <body>
-
-    <h1>Inscripción a 3C Vibes</h1>
-    <p>BIENVENIDO! <br> Por favor, completa el siguiente formulario para inscribirte en 3C Vibes.</p>
-    <p>BIENVE <br> te formulario para</p>
-    <p>TEST! <br> PRUEBA.</p>
-
-    
-
-    <form>
-        <div>
-            <label for="nombre">Nombre completo: </label>
-            <input class="escrito" type="text" id="nombre" name="nombre" required /> (obligatorio)
-            <br>
+    <header>
+        <h1>Formulario de Reserva</h1>
+        <nav><a href="carrito.html">Volver a Mi Selección</a></nav>
+    </header>
+    <main>
+        <div class="alerta-prototipo">
+            Prototipo: El envío de datos es una simulación.
         </div>
+        <form action="index.html" method="GET">
+            <fieldset>
+                <legend>Datos Personales</legend>
 
-        <div>
-            <label for="pulsera">Nombre en la pulsera: </label>
-            <input type="text" id="pulsera" name="pulsera">
-            <br>
-        </div>
+                <div class="campo">
+                    <label for="nombre">Nombre completo (Requerido):</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div> <!-- 1. Campo de texto -->
 
-        <div>
-            <label for="edad">Edad: </label>
-            <input type="number" id="edad" name="edad" />
-            <br>
-        </div>
+                <div class="campo">
+                    <label for="correo">Correo electrónico (Requerido):</label>
+                    <input type="email" id="correo" name="correo" required>
+                </div> <!-- 2. Campo de correo -->
 
-        <div class="artista">
-            <label for="comprobar">Comprobar inscripción: </label>
-            <input type="submit" id="comprobar" name="comprobar" value="Comprobar" />
+                <div class="campo">
+                    <label for="telefono">Teléfono de contacto:</label>
+                    <input type="tel" id="telefono" name="telefono" pattern="[0-9]{9}" title="Debe contener 9 números">
+                </div> <!-- 3. Campo extra (teléfono) -->
+            </fieldset>
 
-        </div>
+            <fieldset>
+                <legend>Detalles de la Reserva</legend>
 
-        <div>
-            <label for="correo">Correo electrónico: </label>
-            <input type="email" id="correo" name="correo" placeholder="persona@email.com" required /> (obligatorio)
-            <br>
-        </div>
+                <div class="campo">
+                    <label for="deporte">Deporte a practicar:</label>
+                    <select id="deporte" name="deporte">
+                        <option value="futsal">Fútbol Sala</option>
+                        <option value="f7">Fútbol 7</option>
+                        <option value="padel">Pádel</option>
+                    </select>
+                </div> <!-- 4. Desplegable select -->
 
-        <div>
-            <label for="telefono">Teléfono de contacto: </label>
-            <input type="tel" id="telefono" name="telefono" required /><br>
-        </div>
+                <div class="campo">
+                    <label for="fecha">Fecha de reserva (Requerido):</label>
+                    <input type="date" id="fecha" name="fecha" required min="2026-11-06">
+                </div> <!-- 5. Campo extra (fecha) -->
 
-        <div>
-            <label for="entradas">Numero de entradas (entre 1 y 4 entradas): </label>
-            <input type="number" id="entradas" name="entradas" min="1" max="4" required /> (obligatorio)
-            <br>
-        </div>
+                <div class="campo">
+                    <label>Nivel de juego de los participantes:</label>
+                    <div>
+                        <input type="radio" id="nivel_iniciacion" name="nivel" value="iniciacion" checked>
+                        <label for="nivel_iniciacion">Iniciación</label>
 
-        <fieldset>
-            <legend>Tipo de entrada</legend>
-            <div>
-                <label for="entrada1">Entrada de día</label>
-                <input type="radio" id="dia" name="tipo_entrada" value="dia" required />
-            </div>
-            <div>
-                <label for="entrada2">Abono completo</label>
-                <input type="radio" id="abono" name="tipo_entrada" value="abono" />
-            </div>
-        </fieldset>
+                        <input type="radio" id="nivel_amateur" name="nivel" value="amateur">
+                        <label for="nivel_amateur">Amateur</label>
+                    </div>
+                </div> <!-- 6. Grupo de botones de opción (radio) -->
 
-        <fieldset>
-            <legend>Servicios opcionales</legend>
-            <label>Camping</label>
-            <input type="checkbox" id="camping" name="servicios" value="camping" />
-            <label>Autobús</label>
-            <input type="checkbox" id="autobus" name="servicios" value="autobus" />
-        </fieldset>
+                <div class="campo">
+                    <label for="comentarios">Peticiones especiales (material adicional):</label>
+                    <textarea id="comentarios" name="comentarios" rows="4"></textarea>
+                </div> <!-- 7. Área de texto -->
+            </fieldset>
 
-        <label>Día de llegada (Obligatorio)</label>
-        
-        <select name="dia" id="dia" required>
-            <option value="">Elige un día</option>
-            <option value="viernes">Viernes</option>
-            <option value="sabado">Sábado</option>
+            <fieldset>
+                <legend>Confirmación</legend>
+                <div class="campo">
+                    <div>
+                        <input type="checkbox" id="condiciones" name="condiciones" required>
+                        <label for="condiciones">Acepto las normas de uso de las instalaciones municipales
+                            (Requerido)</label>
+                    </div>
+                </div> <!-- 8. Casilla de verificación -->
+            </fieldset>
 
-
-
-        </select>
-
-        <br>
-        <button id="enviar" type="submit">Enviar</button>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    </form>
-
+            <button type="submit" class="btn">Solicitar reserva</button>
+        </form>
+    </main>
 </body>
 
 </html>

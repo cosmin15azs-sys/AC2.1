@@ -4,110 +4,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formularios</title>
-    <link rel="stylesheet" href="estilos.css">
+    <title>Inicio - Polideportivo Tres Cantos</title>
+    <link rel="stylesheet" href="css/estilos.css">
 </head>
 
 <body>
-
-    <h1>Inscripción a 3C Vibes</h1>
-    <p>BIENVENIDO! <br> Por favor, completa el siguiente formulario para inscribirte en 3C Vibes.</p>
-    <p>BIENVE <br> te formulario para</p>
-    <p>TEST! <br> PRUEBA.</p>
-
-    
-
-    <form>
-        <div>
-            <label for="nombre">Nombre completo: </label>
-            <input class="escrito" type="text" id="nombre" name="nombre" required /> (obligatorio)
+    <header>
+        <h1>Polideportivo Municipal</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="catalogo.html">Instalaciones</a></li>
+                <li><a href="login.html">Acceso</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Bienvenido a tu centro deportivo</h2>
+            <p>Descubre nuestras instalaciones deportivas, consulta disponibilidad y reserva tu pista en pocos pasos.
+            </p>
+            <p>Dirigido a todos los vecinos y clubes amateur de la zona.</p>
             <br>
-        </div>
-
-        <div>
-            <label for="pulsera">Nombre en la pulsera: </label>
-            <input type="text" id="pulsera" name="pulsera">
-            <br>
-        </div>
-
-        <div>
-            <label for="edad">Edad: </label>
-            <input type="number" id="edad" name="edad" />
-            <br>
-        </div>
-
-        <div class="artista">
-            <label for="comprobar">Comprobar inscripción: </label>
-            <input type="submit" id="comprobar" name="comprobar" value="Comprobar" />
-
-        </div>
-
-        <div>
-            <label for="correo">Correo electrónico: </label>
-            <input type="email" id="correo" name="correo" placeholder="persona@email.com" required /> (obligatorio)
-            <br>
-        </div>
-
-        <div>
-            <label for="telefono">Teléfono de contacto: </label>
-            <input type="tel" id="telefono" name="telefono" required /><br>
-        </div>
-
-        <div>
-            <label for="entradas">Numero de entradas (entre 1 y 4 entradas): </label>
-            <input type="number" id="entradas" name="entradas" min="1" max="4" required /> (obligatorio)
-            <br>
-        </div>
-
-        <fieldset>
-            <legend>Tipo de entrada</legend>
-            <div>
-                <label for="entrada1">Entrada de día</label>
-                <input type="radio" id="dia" name="tipo_entrada" value="dia" required />
-            </div>
-            <div>
-                <label for="entrada2">Abono completo</label>
-                <input type="radio" id="abono" name="tipo_entrada" value="abono" />
-            </div>
-        </fieldset>
-
-        <fieldset>
-            <legend>Servicios opcionales</legend>
-            <label>Camping</label>
-            <input type="checkbox" id="camping" name="servicios" value="camping" />
-            <label>Autobús</label>
-            <input type="checkbox" id="autobus" name="servicios" value="autobus" />
-        </fieldset>
-
-        <label>Día de llegada (Obligatorio)</label>
-        
-        <select name="dia" id="dia" required>
-            <option value="">Elige un día</option>
-            <option value="viernes">Viernes</option>
-            <option value="sabado">Sábado</option>
-
-
-
-        </select>
-
-        <br>
-        <button id="enviar" type="submit">Enviar</button>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    </form>
-
+            <a href="catalogo.html" class="btn">Ver Catálogo de Pistas</a>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2026 Polideportivo Tres Cantos. Práctica DIW.</p>
+    </footer>
 </body>
 
 </html>

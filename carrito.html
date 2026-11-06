@@ -3,111 +3,38 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formularios</title>
-    <link rel="stylesheet" href="estilos.css">
+    <title>Mi Reserva</title>
+    <link rel="stylesheet" href="css/estilos.css">
 </head>
 
 <body>
-
-    <h1>Inscripción a 3C Vibes</h1>
-    <p>BIENVENIDO! <br> Por favor, completa el siguiente formulario para inscribirte en 3C Vibes.</p>
-    <p>BIENVE <br> te formulario para</p>
-    <p>TEST! <br> PRUEBA.</p>
-
-    
-
-    <form>
-        <div>
-            <label for="nombre">Nombre completo: </label>
-            <input class="escrito" type="text" id="nombre" name="nombre" required /> (obligatorio)
-            <br>
+    <header>
+        <h1>Mi Selección de Reservas</h1>
+        <nav><a href="catalogo.html">Seguir explorando</a></nav>
+    </header>
+    <main>
+        <div class="alerta-prototipo">
+            Prototipo: El recálculo de importes y eliminación son simulados.
         </div>
-
-        <div>
-            <label for="pulsera">Nombre en la pulsera: </label>
-            <input type="text" id="pulsera" name="pulsera">
-            <br>
-        </div>
-
-        <div>
-            <label for="edad">Edad: </label>
-            <input type="number" id="edad" name="edad" />
-            <br>
-        </div>
-
-        <div class="artista">
-            <label for="comprobar">Comprobar inscripción: </label>
-            <input type="submit" id="comprobar" name="comprobar" value="Comprobar" />
-
-        </div>
-
-        <div>
-            <label for="correo">Correo electrónico: </label>
-            <input type="email" id="correo" name="correo" placeholder="persona@email.com" required /> (obligatorio)
-            <br>
-        </div>
-
-        <div>
-            <label for="telefono">Teléfono de contacto: </label>
-            <input type="tel" id="telefono" name="telefono" required /><br>
-        </div>
-
-        <div>
-            <label for="entradas">Numero de entradas (entre 1 y 4 entradas): </label>
-            <input type="number" id="entradas" name="entradas" min="1" max="4" required /> (obligatorio)
-            <br>
-        </div>
-
-        <fieldset>
-            <legend>Tipo de entrada</legend>
-            <div>
-                <label for="entrada1">Entrada de día</label>
-                <input type="radio" id="dia" name="tipo_entrada" value="dia" required />
+        <section>
+            <div class="fila-carrito">
+                <span>Pista Fútbol Sala - 18:00h</span>
+                <span>15.00 €</span>
+                <button type="button" class="btn">Eliminar</button>
             </div>
-            <div>
-                <label for="entrada2">Abono completo</label>
-                <input type="radio" id="abono" name="tipo_entrada" value="abono" />
+            <div class="fila-carrito">
+                <span>Luz artificial (Extra)</span>
+                <span>5.00 €</span>
+                <button type="button" class="btn">Eliminar</button>
             </div>
-        </fieldset>
-
-        <fieldset>
-            <legend>Servicios opcionales</legend>
-            <label>Camping</label>
-            <input type="checkbox" id="camping" name="servicios" value="camping" />
-            <label>Autobús</label>
-            <input type="checkbox" id="autobus" name="servicios" value="autobus" />
-        </fieldset>
-
-        <label>Día de llegada (Obligatorio)</label>
-        
-        <select name="dia" id="dia" required>
-            <option value="">Elige un día</option>
-            <option value="viernes">Viernes</option>
-            <option value="sabado">Sábado</option>
-
-
-
-        </select>
-
-        <br>
-        <button id="enviar" type="submit">Enviar</button>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    </form>
-
+            <div class="fila-carrito" style="font-weight: bold; background-color: var(--color-secundario);">
+                <span>Total Estimado:</span>
+                <span>20.00 €</span>
+            </div>
+            <br>
+            <a href="formulario.html" class="btn">Completar Solicitud de Reserva</a>
+        </section>
+    </main>
 </body>
 
 </html>

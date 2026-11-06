@@ -3,111 +3,31 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formularios</title>
-    <link rel="stylesheet" href="estilos.css">
+    <title>Detalle Fútbol Sala</title>
+    <link rel="stylesheet" href="css/estilos.css">
 </head>
 
 <body>
-
-    <h1>Inscripción a 3C Vibes</h1>
-    <p>BIENVENIDO! <br> Por favor, completa el siguiente formulario para inscribirte en 3C Vibes.</p>
-    <p>BIENVE <br> te formulario para</p>
-    <p>TEST! <br> PRUEBA.</p>
-
-    
-
-    <form>
-        <div>
-            <label for="nombre">Nombre completo: </label>
-            <input class="escrito" type="text" id="nombre" name="nombre" required /> (obligatorio)
+    <header>
+        <h1>Detalle de Instalación</h1>
+        <nav><a href="catalogo.html">Volver al Catálogo</a></nav>
+    </header>
+    <main>
+        <article>
+            <img src="img/futsal.jpg" alt="Pista exterior de Fútbol Sala"
+                style="max-width: 100%; height: 300px; object-fit: cover;">
+            <h2>Pista Fútbol Sala (Césped Artificial)</h2>
+            <p>Pista homologada para partidos amateur y entrenamientos. Dispone de iluminación LED nocturna y redes en
+                perfecto estado.</p>
+            <ul>
+                <li>Dimensiones: 40x20 metros.</li>
+                <li>Vestuarios incluidos en el precio.</li>
+            </ul>
+            <p class="precio">Tarifa: 15€ / hora</p>
             <br>
-        </div>
-
-        <div>
-            <label for="pulsera">Nombre en la pulsera: </label>
-            <input type="text" id="pulsera" name="pulsera">
-            <br>
-        </div>
-
-        <div>
-            <label for="edad">Edad: </label>
-            <input type="number" id="edad" name="edad" />
-            <br>
-        </div>
-
-        <div class="artista">
-            <label for="comprobar">Comprobar inscripción: </label>
-            <input type="submit" id="comprobar" name="comprobar" value="Comprobar" />
-
-        </div>
-
-        <div>
-            <label for="correo">Correo electrónico: </label>
-            <input type="email" id="correo" name="correo" placeholder="persona@email.com" required /> (obligatorio)
-            <br>
-        </div>
-
-        <div>
-            <label for="telefono">Teléfono de contacto: </label>
-            <input type="tel" id="telefono" name="telefono" required /><br>
-        </div>
-
-        <div>
-            <label for="entradas">Numero de entradas (entre 1 y 4 entradas): </label>
-            <input type="number" id="entradas" name="entradas" min="1" max="4" required /> (obligatorio)
-            <br>
-        </div>
-
-        <fieldset>
-            <legend>Tipo de entrada</legend>
-            <div>
-                <label for="entrada1">Entrada de día</label>
-                <input type="radio" id="dia" name="tipo_entrada" value="dia" required />
-            </div>
-            <div>
-                <label for="entrada2">Abono completo</label>
-                <input type="radio" id="abono" name="tipo_entrada" value="abono" />
-            </div>
-        </fieldset>
-
-        <fieldset>
-            <legend>Servicios opcionales</legend>
-            <label>Camping</label>
-            <input type="checkbox" id="camping" name="servicios" value="camping" />
-            <label>Autobús</label>
-            <input type="checkbox" id="autobus" name="servicios" value="autobus" />
-        </fieldset>
-
-        <label>Día de llegada (Obligatorio)</label>
-        
-        <select name="dia" id="dia" required>
-            <option value="">Elige un día</option>
-            <option value="viernes">Viernes</option>
-            <option value="sabado">Sábado</option>
-
-
-
-        </select>
-
-        <br>
-        <button id="enviar" type="submit">Enviar</button>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    </form>
-
+            <a href="carrito.html" class="btn">Añadir a mi selección</a>
+        </article>
+    </main>
 </body>
 
 </html>
