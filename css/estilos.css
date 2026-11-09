@@ -1,170 +1,287 @@
 /* css/estilos.css */
+/* crea variables CSS definidas en :root, para luego ser llamadas en el resto del documento HTML */
 :root {
     --color-primario: #0056b3;
+    /* Color principal de la interfaz */
     /* Contraste alto superando el 4.5:1 exigido */
     --color-secundario: #f4f4f4;
+    /* Color secundario de la interfaz */
     --color-texto: #333333;
+    /* Color del texto principal */
+    /* Un gris suave para líneas divisorias o contornos de cajas. */
     --color-borde: #dddddd;
+    /* Color de los bordes */
+    /* cuando alguien navegue con el teclado, el indicador(foco) visual*/
     --color-foco: #ff9900;
+    /* Color del foco visible */
 }
 
+/* aplica a todos los elementos HTML de la página web */
+/* Esto asegura que el modelo de caja sea consistente y elimina márgenes y rellenos predeterminados */
 * {
     box-sizing: border-box;
+    /* Incluye el padding y el borde dentro del ancho y alto del elemento */
     margin: 0;
+    /* Elimina los márgenes predeterminados */
     padding: 0;
+    /* Elimina los rellenos predeterminados */
 }
 
+/* Estilos generales para el cuerpo del documento */
 body {
     font-family: Arial, sans-serif;
+    /* Fuente principal del documento */
     color: var(--color-texto);
+    /* Color del texto principal */
     line-height: 1.6;
+    /* Altura de línea para mejorar la legibilidad */
     display: flex;
+    /* Activa Flexbox en el cuerpo del documento */
     flex-direction: column;
+    /* Organiza los elementos hijos en columna */
     min-height: 100vh;
+    /* Asegura que el cuerpo ocupe al menos toda la altura de la ventana */
+    background-color: var(--color-secundario);
 }
 
 /* Flexbox: Cabecera y Navegación */
 header {
     background-color: var(--color-primario);
+    /* Color de fondo del cabecero */
     color: white;
     padding: 1rem 2rem;
+    /* Espaciado interno */
     display: flex;
+    /* Activa Flexbox en el cabecero. Esto alinea de forma automática todos sus elementos 
+    hijos (por ejemplo, el logo y el nav) en una sola fila horizontal. */
     justify-content: space-between;
+    /* Distribuye el espacio disponible entre los elementos hijos, 
+    dejando el máximo espacio posible entre ellos. */
     align-items: center;
+    /* Alinea verticalmente los elementos hijos en el centro del contenedor flex. */
     flex-wrap: wrap;
+    /* Permite que los elementos hijos se envuelvan a la siguiente línea si no caben en una sola fila. */
 }
 
+/* Selecciona todos los enlaces <ul> que se encuentran dentro de una etiqueta de navegación <nav> */
 nav ul {
     list-style: none;
+    /* Elimina los puntos de la lista */
     display: flex;
+    /* Muestra los elementos de la lista en una fila horizontal */
     gap: 1.5rem;
+    /* Espacio entre los elementos de la lista */
 }
 
+/* Selecciona todos los enlaces <a> que se encuentran dentro de una etiqueta de navegación <nav> */
 nav a {
     color: white;
     text-decoration: none;
+    /* Elimina el subrayado predeterminado */
     font-weight: bold;
+    /* Hace que el texto del enlace sea negrita */
 }
 
+/* Estilos para enlaces al pasar el cursor o al recibir foco */
 nav a:hover,
 a:focus-visible {
     text-decoration: underline;
+    /* Subraya el enlace cuando está enfocado o al pasar el cursor */
 }
 
 /* Accesibilidad RA5: Foco visible */
+/* se destaca el borde cuando se navega con el teclado TAB (foco visible) */
 *:focus-visible {
     outline: 3px solid var(--color-foco);
+    /* Borde visible para el foco */
     outline-offset: 2px;
+    /* Desplaza el borde del foco ligeramente hacia afuera */
 }
 
+/* Estilos para el contenido principal */
 main {
     flex: 1;
+    /* el <main> debe estirarse para ocupar todo el espacio vertical disponible. */
     padding: 2rem;
+    /* Espaciado interno del contenido principal */
     max-width: 1200px;
+    /* Ancho máximo del contenido principal */
     margin: 0 auto;
+    /* Centra el contenido principal horizontalmente */
     width: 100%;
+    /* Asegura que el contenido principal ocupe todo el ancho disponible */
 }
 
 /* Formularios y Botones */
+/* aplica estilos a todos los elementos con la clase="btn" */
 .btn {
     background-color: var(--color-primario);
+    /* Color de fondo del botón */
     color: white;
+    /* Color del texto del botón */
     padding: 0.5rem 1rem;
+    /* Espaciado interno del botón */
     border: none;
+    /* Elimina el borde predeterminado del botón */
     border-radius: 4px;
+    /* Bordes redondeados para el botón */
     cursor: pointer;
+    /* Cambia el cursor al pasar sobre el botón */
     font-size: 1rem;
+    /* Tamaño de fuente del botón */
 }
 
+/* cuando se pasa por encima del botón */
 .btn:hover {
     background-color: #004494;
+    /* Cambia el color de fondo del botón al pasar el cursor */
 }
 
+/* aplica a todas las etiquetas <fieldset> que se encuentran en formulario.html y login.html */
 fieldset {
     border: 1px solid var(--color-borde);
+    /* Borde del fieldset */
     padding: 1.5rem;
+    /* Espaciado interno del fieldset */
     margin-bottom: 1.5rem;
+    /* Margen inferior del fieldset */
     border-radius: 4px;
+    /* Bordes redondeados para el fieldset */
 }
 
+/* aplica estilos para las <legend> dentro de <fieldset> */
 legend {
     font-weight: bold;
+    /* Texto en negrita para la leyenda */
     padding: 0 0.5rem;
+    /* Espaciado interno horizontal para la leyenda */
 }
 
+/* aplica estilos a los contenedores con la clase="campo" */
 .campo {
     margin-bottom: 1rem;
+    /* Margen inferior del contenedor */
     display: flex;
+    /* Utiliza flexbox para organizar los elementos hijos */
     flex-direction: column;
+    /* Organiza los elementos hijos en una columna */
 }
 
+/* aplica estilos a los elementos <label> dentro de un contenedor con clase="campo" */
 .campo label {
     margin-bottom: 0.5rem;
+    /* Margen inferior del label */
     font-weight: bold;
+    /* Texto en negrita para el label */
 }
 
+/* aplica estilos a los elementos <input>, <select> y <textarea> dentro de un contenedor con clase="campo" */
+/* La coma (,) se usa como separador para aplicar el mismo diseño a tres elementos diferentes: */
 .campo input,
 .campo select,
 .campo textarea {
     padding: 0.5rem;
+    /* Espaciado interno de los campos de entrada */
     border: 1px solid var(--color-borde);
+    /* Borde de los campos de entrada */
     border-radius: 4px;
+    /* Bordes redondeados para los campos de entrada */
 }
 
 /* Grid: Catálogo RA2 */
+/* Aplica un diseño de cuadrícula a los elementos del catálogo */
 .catalogo-grid {
     display: grid;
+    /* Utiliza grid layout para organizar los elementos del catálogo */
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    /* Define el número de columnas y su tamaño mínimo y máximo */
     gap: 2rem;
+    /* Espacio entre las tarjetas del catálogo */
     margin-top: 1.5rem;
+    /* Margen superior del catálogo */
 }
 
+/* Aplica estilos a cada tarjeta individual dentro del catálogo */
 .tarjeta {
     border: 1px solid var(--color-borde);
+    /* Borde de la tarjeta */
     border-radius: 8px;
+    /* Bordes redondeados de la tarjeta */
     padding: 1rem;
+    /* Espaciado interno de la tarjeta */
     display: flex;
+    /* Utiliza flexbox para organizar los elementos hijos de la tarjeta */
     flex-direction: column;
+    /* Organiza los elementos hijos en una columna */
 }
 
+/* aplica estilos a todas las etiquetas de imagen <img> que estén dentro de un contenedor con la clase class="tarjeta" */
 .tarjeta img {
     width: 100%;
+    /* La imagen ocupa todo el ancho de la tarjeta */
     height: 200px;
+    /* Altura fija de la imagen */
     object-fit: cover;
+    /* Ajusta la imagen para cubrir el área sin distorsionar */
     border-radius: 4px;
+    /* Bordes redondeados de la imagen */
 }
 
+/* aplica estilos a los encabezados <h3> dentro de un contenedor con la clase class="tarjeta" */
 .tarjeta h3 {
     margin: 1rem 0 0.5rem 0;
+    /* Margen superior e inferior del encabezado dentro de la tarjeta */
 }
 
+/* aplica estilos a todas las etiquetas con la clase="precio" dentro de un contenedor con la clase class="tarjeta" */
 .tarjeta .precio {
     font-weight: bold;
+    /* Texto en negrita para el precio */
     color: var(--color-primario);
+    /* Color del precio */
     margin-top: auto;
+    /* Empuja el precio hacia la parte inferior de la tarjeta */
     padding-top: 1rem;
+    /* Espaciado superior del precio */
 }
 
+/* aplica estilos a los mensajes de alerta con la clase="alerta-prototipo" */
 .alerta-prototipo {
     background-color: #fff3cd;
+    /* Color de fondo de la alerta */
     border: 1px solid #ffeeba;
+    /* Borde de la alerta */
     padding: 1rem;
+    /* Espaciado interno de la alerta */
     margin-bottom: 1.5rem;
+    /* Margen inferior de la alerta */
     border-radius: 4px;
+    /* Bordes redondeados de la alerta */
 }
 
 /* Flexbox: Carrito */
+/* aplica estilos a las filas dentro del carrito, es decir aplica a todos los elementos con la clase="fila-carrito" */
 .fila-carrito {
     display: flex;
+    /* Utiliza flexbox para organizar los elementos hijos de la fila del carrito */
     justify-content: space-between;
+    /* Distribuye el espacio entre los elementos hijos de la fila del carrito */
     align-items: center;
+    /* Alinea los elementos hijos verticalmente al centro */
     padding: 1rem;
+    /* Espaciado interno de la fila del carrito */
     border-bottom: 1px solid var(--color-borde);
+    /* Borde inferior de la fila del carrito */
 }
 
+/* aplica estilos al pie de página */
 footer {
     background-color: var(--color-secundario);
+    /* Color de fondo del pie de página */
     text-align: center;
+    /* Centra el contenido del pie de página */
     padding: 1rem;
+    /* Espaciado interno del pie de página */
     margin-top: auto;
+    /* Empuja el pie de página hacia la parte inferior de la página */
 }
