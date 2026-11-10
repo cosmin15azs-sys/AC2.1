@@ -37,6 +37,12 @@ Toda la documentación de análisis previo y evaluación se encuentra en la carp
 *   [Definición del proyecto (Propósito, usuarios, contexto y tareas)](docs/definicion.md)
 *   [Bocetos de la interfaz](docs/bocetos.md)
 *   [Revisión de usabilidad con compañero](docs/revision_bocetos.md)
+*   [Revisión con DevTools(F12)](docs/dev_tools.md)
+*   [Prueba final de usabilidad con compañero](docs/prueba_final.md)
+*   [Revisión de accesibilidad](docs/accesibilidad.md)
+
+
+
 
 ## Procedencia de recursos
 *   Tipografía: Fuentes estándar del sistema (Arial, sans-serif).

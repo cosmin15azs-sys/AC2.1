@@ -1,4 +1,4 @@
-# Prueba final de usabilidad en la web desarrollada
+# Prueba final de usabilidad con compañero
 
 **Revisor:** Piera (Compañera de clase)
 
