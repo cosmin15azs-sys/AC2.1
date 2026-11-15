@@ -1,89 +1,107 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
-    <title>Solicitar Reserva</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitud de Reserva - Polideportivo Municipal Tres Cantos</title>
     <link rel="stylesheet" href="css/estilos.css">
 </head>
-
 <body>
     <header>
-        <h1>Formulario de Reserva</h1>
-        <nav><a href="carrito.html">Volver a Mi Selección</a></nav>
+        <div class="contenedor-cabecera">
+            <h1>Polideportivo Municipal Tres Cantos</h1>
+            <nav aria-label="Navegación principal">
+                <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="catalogo.html">Instalaciones</a></li>
+                <li><a href="carrito.html" class="activo" aria-current="page">Mi Reserva</a></li>
+                <li><a href="login.html">Acceso</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
     <main>
-        <div class="alerta-prototipo">
-            Prototipo: El envío de datos es una simulación.
-        </div>
-        <form action="index.html" method="GET">
-            <fieldset>
-                <legend>Datos Personales</legend>
+        <a href="carrito.html" class="enlace-volver">&larr; Volver a Mi Reserva</a>
+        <section class="contenedor-formulario">
+            <h2>Formulario de solicitud de reserva</h2>
+            <p class="aviso-prototipo" role="status">
+                <strong>Aviso de prototipo:</strong> El envío realiza únicamente validación nativa en el navegador y no registra reservas reales.
+            </p>
 
-                <div class="campo">
-                    <label for="nombre">Nombre completo (Requerido):</label>
-                    <input type="text" id="nombre" name="nombre" required>
-                </div> <!-- 1. Campo de texto -->
-
-                <div class="campo">
-                    <label for="correo">Correo electrónico (Requerido):</label>
-                    <input type="email" id="correo" name="correo" required>
-                </div> <!-- 2. Campo de correo -->
-
-                <div class="campo">
-                    <label for="telefono">Teléfono de contacto:</label>
-                    <input type="tel" id="telefono" name="telefono" pattern="[0-9]{9}" title="Debe contener 9 números">
-                </div> <!-- 3. Campo extra (teléfono) -->
-            </fieldset>
-
-            <fieldset>
-                <legend>Detalles de la Reserva</legend>
-
-                <div class="campo">
-                    <label for="deporte">Deporte a practicar:</label>
-                    <select id="deporte" name="deporte">
-                        <option value="futsal">Fútbol Sala</option>
-                        <option value="f7">Fútbol 7</option>
-                        <option value="padel">Pádel</option>
-                    </select>
-                </div> <!-- 4. Desplegable select -->
-
-                <div class="campo">
-                    <label for="fecha">Fecha de reserva (Requerido):</label>
-                    <input type="date" id="fecha" name="fecha" required min="2026-11-06">
-                </div> <!-- 5. Campo extra (fecha) -->
-
-                <div class="campo">
-                    <label>Nivel de juego de los participantes:</label>
-                    <div>
-                        <input type="radio" id="nivel_iniciacion" name="nivel" value="iniciacion" checked>
-                        <label for="nivel_iniciacion">Iniciación</label>
-
-                        <input type="radio" id="nivel_amateur" name="nivel" value="amateur">
-                        <label for="nivel_amateur">Amateur</label>
+            <form action="index.html" method="get">
+                <fieldset>
+                    <legend>Datos personales del solicitante</legend>
+                    <div class="campo">
+                        <label for="nombre">Nombre y apellidos (Obligatorio):</label>
+                        <input type="text" id="nombre" name="nombre" required autocomplete="name">
                     </div>
-                </div> <!-- 6. Grupo de botones de opción (radio) -->
-
-                <div class="campo">
-                    <label for="comentarios">Peticiones especiales (material adicional):</label>
-                    <textarea id="comentarios" name="comentarios" rows="4"></textarea>
-                </div> <!-- 7. Área de texto -->
-            </fieldset>
-
-            <fieldset>
-                <legend>Confirmación</legend>
-                <div class="campo">
-                    <div>
-                        <input type="checkbox" id="condiciones" name="condiciones" required>
-                        <label for="condiciones">Acepto las normas de uso de las instalaciones municipales
-                            (Requerido)</label>
+                    <div class="campo">
+                        <label for="correo">Correo electrónico de contacto (Obligatorio):</label>
+                        <input type="email" id="correo" name="correo" required autocomplete="email">
                     </div>
-                </div> <!-- 8. Casilla de verificación -->
-            </fieldset>
+                    <div class="campo">
+                        <label for="telefono">Teléfono móvil (Opcional):</label>
+                        <input type="tel" id="telefono" name="telefono" pattern="[0-9]{9}" aria-describedby="ayuda-telefono" autocomplete="tel">
+                        <small id="ayuda-telefono" class="texto-ayuda">Formato requerido si se indica: 9 dígitos sin espacios ni prefijo (ejemplo: 612345678).</small>
+                    </div>
+                </fieldset>
 
-            <button type="submit" class="btn">Solicitar reserva</button>
-        </form>
+                <fieldset>
+                    <legend>Detalles de la reserva</legend>
+                    <div class="campo">
+                        <label for="deporte">Instalación seleccionada (Obligatorio):</label>
+                        <select id="deporte" name="deporte" required>
+                            <option value="futsal" selected>Pista Cubierta de Fútbol Sala (2 horas - 30,00 €)</option>
+                            <option value="futbol7">Campo de Fútbol 7</option>
+                            <option value="padel">Pista de Pádel Cristales</option>
+                        </select>
+                    </div>
+                    <div class="campo">
+                        <label for="fecha">Fecha deseada (Obligatorio):</label>
+                        <input type="date" id="fecha" name="fecha" required>
+                    </div>
+                    <div class="campo">
+                        <label for="franja">Franja horaria de inicio (Obligatorio):</label>
+                        <select id="franja" name="franja" required>
+                            <option value="17:00">17:00 h</option>
+                            <option value="18:00" selected>18:00 h</option>
+                            <option value="19:00">19:00 h</option>
+                            <option value="20:00">20:00 h</option>
+                        </select>
+                    </div>
+
+                    <fieldset class="sub-fieldset">
+                        <legend>Nivel de juego de los participantes (Obligatorio)</legend>
+                        <div class="opcion-linea">
+                            <input type="radio" id="nivel_iniciacion" name="nivel" value="iniciacion" checked>
+                            <label for="nivel_iniciacion">Iniciación / Recreativo</label>
+                        </div>
+                        <div class="opcion-linea">
+                            <input type="radio" id="nivel_amateur" name="nivel" value="amateur">
+                            <label for="nivel_amateur">Amateur / Competición local</label>
+                        </div>
+                    </fieldset>
+
+                    <div class="campo">
+                        <label for="comentarios">Peticiones especiales o material adicional (Opcional):</label>
+                        <textarea id="comentarios" name="comentarios" rows="3"></textarea>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Confirmación y normativa</legend>
+                    <div class="opcion-linea">
+                        <input type="checkbox" id="normas" name="normas" required>
+                        <label for="normas">He leído y acepto las normas de uso de las instalaciones municipales (Obligatorio)</label>
+                    </div>
+                </fieldset>
+
+                <button type="submit" class="btn">Solicitar reserva</button>
+            </form>
+        </section>
     </main>
+    <footer>
+        <p>&copy; 2026 Polideportivo Municipal Tres Cantos. Proyecto DIW.</p>
+    </footer>
 </body>
-
 </html>

@@ -1,33 +1,54 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
-    <title>Detalle Fútbol Sala</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle Pista Fútbol Sala - Polideportivo Municipal Tres Cantos</title>
     <link rel="stylesheet" href="css/estilos.css">
 </head>
-
 <body>
     <header>
-        <h1>Detalle de Instalación</h1>
-        <nav><a href="catalogo.html">Volver al Catálogo</a></nav>
+        <div class="contenedor-cabecera">
+            <h1>Polideportivo Municipal Tres Cantos</h1>
+            <nav aria-label="Navegación principal">
+                <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="catalogo.html" class="activo" aria-current="page">Instalaciones</a></li>
+                <li><a href="carrito.html">Mi Reserva</a></li>
+                <li><a href="login.html">Acceso</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
     <main>
-        <article>
-            <img src="img/futsal.jpg" alt="Pista cubierta de Fútbol Sala"
-                style="max-width: 100%; height: 300px; object-fit: cover;">
-            <h2>Pista Fútbol Sala (Césped Artificial)</h2>
-            <p>Pista homologada para partidos amateur y entrenamientos. Dispone de iluminación LED nocturna y redes en
-                perfecto estado.</p>
-            <ul>
-                <li>Dimensiones: 40x20 metros.</li>
-                <li>Vestuarios incluidos en el precio.</li>
-            </ul>
-            <p class="precio">Tarifa: 15€ / hora</p>
-            <br>
-            <a href="carrito.html" class="btn">Añadir a mi selección</a>
-        </article>
+        <a href="catalogo.html" class="enlace-volver">&larr; Volver al catálogo de instalaciones</a>
+        <section>
+            <h2>Detalle de la instalación</h2>
+            <div class="detalle-contenedor">
+                <div class="detalle-imagen">
+                    <img src="img/futsal.jpg" alt="Vista general de la pista cubierta de fútbol sala con parqué sintético y porterías reglamentarias">
+                </div>
+                <div class="detalle-info">
+                    <div>
+                        <h3>Pista Cubierta de Fútbol Sala</h3>
+                        <p>Instalación interior situada en el pabellón principal, preparada para partidos amistosos, entrenamientos de clubes y ligas locales.</p>
+                        <ul class="lista-caracteristicas">
+                            <li><strong>Dimensiones reglamentarias:</strong> 40 x 20 metros.</li>
+                            <li><strong>Superficie:</strong> Parqué sintético deportivo de alta absorción.</li>
+                            <li><strong>Equipamiento incluido:</strong> Porterías reglamentarias, redes y banquillos.</li>
+                            <li><strong>Servicios:</strong> Acceso a vestuarios colectivos y duchas 15 minutos antes.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p class="tarifa-destacada">Tarifa: 15,00 € / hora</p>
+                        <a href="carrito.html" class="btn">Añadir a Mi Reserva</a>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
+    <footer>
+        <p>&copy; 2026 Polideportivo Municipal Tres Cantos. Proyecto DIW.</p>
+    </footer>
 </body>
-
 </html>

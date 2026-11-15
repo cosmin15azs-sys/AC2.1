@@ -1,40 +1,75 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
-    <title>Mi Reserva</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Reserva - Polideportivo Municipal Tres Cantos</title>
     <link rel="stylesheet" href="css/estilos.css">
 </head>
-
 <body>
     <header>
-        <h1>Mi Selección de Reservas</h1>
-        <nav><a href="catalogo.html">Seguir explorando</a></nav>
+        <div class="contenedor-cabecera">
+            <h1>Polideportivo Municipal Tres Cantos</h1>
+            <nav aria-label="Navegación principal">
+                <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="catalogo.html">Instalaciones</a></li>
+                <li><a href="carrito.html" class="activo" aria-current="page">Mi Reserva</a></li>
+                <li><a href="login.html">Acceso</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
     <main>
-        <div class="alerta-prototipo">
-            Prototipo: El recálculo de importes y eliminación son simulados.
-        </div>
         <section>
-            <div class="fila-carrito">
-                <span>Pista Fútbol Sala - 18:00h</span>
-                <span>15.00 €</span>
-                <button type="button" class="btn">Eliminar</button>
+            <h2>Mi Reserva</h2>
+            <p class="aviso-prototipo" role="status">
+                <strong>Aviso de prototipo:</strong> Los importes, horas y botones de ajuste o eliminación son una simulación estática de interfaz.
+            </p>
+
+            <div class="lista-reserva">
+                <div class="fila-carrito">
+                    <div class="info-item">
+                        <strong>Pista Cubierta de Fútbol Sala (Franja 18:00h)</strong>
+                        <span class="tarifa-unitaria">Tarifa unitaria: 15,00 € / hora</span>
+                    </div>
+                    <div class="controles-cantidad">
+                        <button type="button" class="btn btn-secundario" aria-label="Restar una hora a Pista Cubierta de Fútbol Sala">-</button>
+                        <span>2 horas</span>
+                        <button type="button" class="btn btn-secundario" aria-label="Sumar una hora a Pista Cubierta de Fútbol Sala">+</button>
+                    </div>
+                    <span class="subtotal">30,00 €</span>
+                    <button type="button" class="btn btn-secundario">Eliminar</button>
+                </div>
+
+                <div class="fila-carrito">
+                    <div class="info-item">
+                        <strong>Iluminación LED de refuerzo (Suplemento opcional)</strong>
+                        <span class="tarifa-unitaria">Tarifa unitaria: 5,00 € / hora</span>
+                    </div>
+                    <div class="controles-cantidad">
+                        <button type="button" class="btn btn-secundario" aria-label="Restar una hora a Iluminación LED">-</button>
+                        <span>1 hora</span>
+                        <button type="button" class="btn btn-secundario" aria-label="Sumar una hora a Iluminación LED">+</button>
+                    </div>
+                    <span class="subtotal">5,00 €</span>
+                    <button type="button" class="btn btn-secundario">Eliminar</button>
+                </div>
+
+                <div class="fila-carrito fila-total">
+                    <span>Total estimado de la reserva:</span>
+                    <span>35,00 €</span>
+                </div>
             </div>
-            <div class="fila-carrito">
-                <span>Luz artificial (Extra)</span>
-                <span>5.00 €</span>
-                <button type="button" class="btn">Eliminar</button>
+
+            <div class="acciones-carrito">
+                <a href="catalogo.html" class="btn btn-secundario">Seguir explorando instalaciones</a>
+                <a href="formulario.html" class="btn">Completar solicitud de reserva</a>
             </div>
-            <div class="fila-carrito" style="font-weight: bold; background-color: var(--color-secundario);">
-                <span>Total Estimado:</span>
-                <span>20.00 €</span>
-            </div>
-            <br>
-            <a href="formulario.html" class="btn">Completar Solicitud de Reserva</a>
         </section>
     </main>
+    <footer>
+        <p>&copy; 2026 Polideportivo Municipal Tres Cantos. Proyecto DIW.</p>
+    </footer>
 </body>
-
 </html>

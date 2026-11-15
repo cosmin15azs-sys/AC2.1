@@ -1,170 +1,531 @@
-/* css/estilos.css */
+/* ==========================================================================
+   Hoja de estilos común - Polideportivo Municipal Tres Cantos (DIW)
+   Cumplimiento WCAG AA (contrastes >= 4.5:1 texto, >= 3:1 bordes y foco)
+   ========================================================================== */
+
 :root {
-    --color-primario: #0056b3;
-    /* Contraste alto superando el 4.5:1 exigido */
-    --color-secundario: #f4f4f4;
-    --color-texto: #333333;
-    --color-borde: #dddddd;
-    --color-foco: #ff9900;
+    --color-primario: #0056b3;        /* Contraste 7,04:1 sobre blanco */
+    --color-primario-oscuro: #003366; /* Contraste 12,63:1 sobre blanco */
+    --color-fondo: #ffffff;
+    --color-secundario: #f4f6f9;
+    --color-destacado-bg: #eef5fc;
+    --color-texto: #222222;           /* Contraste 15,91:1 sobre blanco */
+    --color-texto-suave: #4a4a4a;     /* Contraste 8,86:1 sobre blanco */
+    --color-borde: #767676;           /* Contraste 4,54:1 sobre blanco (> 3:1) */
+    --color-foco: #8a3600;            /* Contraste 6,41:1 sobre blanco (> 3:1) */
+    --color-aviso-bg: #fff8e6;
+    --color-aviso-borde: #8a5a00;
 }
 
-* {
+/* Modelo de caja global */
+*,
+*::before,
+*::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    color: var(--color-texto);
-    line-height: 1.6;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+/* Foco visible de alto contraste para navegación por teclado (RA5) */
+*:focus-visible {
+    outline: 3px solid var(--color-foco);
+    outline-offset: 3px;
 }
 
-/* Flexbox: Cabecera y Navegación */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--color-texto);
+    background-color: var(--color-fondo);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ==========================================================================
+   Cabecera y Navegación Principal (Flexbox)
+   ========================================================================== */
 header {
     background-color: var(--color-primario);
-    color: white;
-    padding: 1rem 2rem;
+    color: #ffffff;
+    padding: 1rem 1.5rem;
+}
+
+.contenedor-cabecera {
+    max-width: 1200px;
+    margin: 0 auto;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+header h1 {
+    font-size: 1.4rem;
 }
 
 nav ul {
     list-style: none;
     display: flex;
-    gap: 1.5rem;
+    flex-wrap: wrap;
+    gap: 0.75rem;
 }
 
 nav a {
-    color: white;
+    display: inline-block;
+    color: #ffffff;
     text-decoration: none;
     font-weight: bold;
+    padding: 0.45rem 0.85rem;
+    border-radius: 4px;
+    border-bottom: 3px solid transparent;
 }
 
-nav a:hover,
-a:focus-visible {
-    text-decoration: underline;
+nav a:hover {
+    background-color: var(--color-primario-oscuro);
 }
 
-/* Accesibilidad RA5: Foco visible */
-*:focus-visible {
-    outline: 3px solid var(--color-foco);
-    outline-offset: 2px;
+/* Indicador del apartado actual (no dependiente solo del color) */
+nav a.activo {
+    background-color: var(--color-primario-oscuro);
+    border-bottom: 3px solid #ffffff;
 }
 
+/* ==========================================================================
+   Contenedor Principal y Tipografía
+   ========================================================================== */
 main {
     flex: 1;
-    padding: 2rem;
+    width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    width: 100%;
+    padding: 2rem 1.5rem;
 }
 
-/* Formularios y Botones */
+h2 {
+    font-size: 1.6rem;
+    color: var(--color-primario-oscuro);
+    margin-bottom: 1rem;
+}
+
+h3 {
+    font-size: 1.2rem;
+    color: var(--color-texto);
+    margin-bottom: 0.5rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+/* ==========================================================================
+   Botones y Variantes Reutilizables (RA2)
+   ========================================================================== */
 .btn {
+    display: inline-block;
     background-color: var(--color-primario);
-    color: white;
-    padding: 0.5rem 1rem;
-    border: none;
+    color: #ffffff;
+    border: 2px solid var(--color-primario);
+    padding: 0.6rem 1.1rem;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
     border-radius: 4px;
     cursor: pointer;
-    font-size: 1rem;
 }
 
-.btn:hover {
-    background-color: #004494;
+.btn:not(:disabled):hover {
+    background-color: var(--color-primario-oscuro);
+    border-color: var(--color-primario-oscuro);
 }
 
-fieldset {
-    border: 1px solid var(--color-borde);
-    padding: 1.5rem;
+/* Variante reutilizable: Botón secundario */
+.btn-secundario {
+    background-color: #ffffff;
+    color: var(--color-primario);
+    border: 2px solid var(--color-primario);
+}
+
+.btn-secundario:not(:disabled):hover {
+    background-color: var(--color-destacado-bg);
+    color: var(--color-primario-oscuro);
+    border-color: var(--color-primario-oscuro);
+}
+
+/* Estado deshabilitado claramente diferenciado (RA5 + RA6) */
+.btn:disabled {
+    background-color: #595959;
+    border-color: #595959;
+    color: #ffffff;
+    cursor: not-allowed;
+    opacity: 0.9;
+}
+
+/* ==========================================================================
+   Avisos de Prototipo y Enlaces Auxiliares
+   ========================================================================== */
+.aviso-prototipo {
+    background-color: var(--color-aviso-bg);
+    border-left: 5px solid var(--color-aviso-borde);
+    border-top: 1px solid var(--color-aviso-borde);
+    border-right: 1px solid var(--color-aviso-borde);
+    border-bottom: 1px solid var(--color-aviso-borde);
+    padding: 0.85rem 1rem;
     margin-bottom: 1.5rem;
     border-radius: 4px;
 }
 
-legend {
+.enlace-volver {
+    display: inline-block;
+    color: var(--color-primario);
     font-weight: bold;
-    padding: 0 0.5rem;
+    text-decoration: underline;
+    margin-bottom: 1.25rem;
 }
 
-.campo {
-    margin-bottom: 1rem;
-    display: flex;
-    flex-direction: column;
+.enlace-volver:hover {
+    color: var(--color-primario-oscuro);
 }
 
-.campo label {
-    margin-bottom: 0.5rem;
-    font-weight: bold;
-}
-
-.campo input,
-.campo select,
-.campo textarea {
-    padding: 0.5rem;
+/* ==========================================================================
+   Página de Inicio (index.html)
+   ========================================================================== */
+.hero {
+    background-color: var(--color-secundario);
     border: 1px solid var(--color-borde);
-    border-radius: 4px;
+    border-radius: 8px;
+    padding: 2.5rem 2rem;
 }
 
-/* Grid: Catálogo RA2 */
+.hero p {
+    max-width: 65ch;
+}
+
+.hero .btn {
+    margin-top: 0.75rem;
+}
+
+/* ==========================================================================
+   Catálogo, Filtros y Grid (catalogo.html)
+   ========================================================================== */
+.filtros {
+    background-color: var(--color-secundario);
+    border: 1px solid var(--color-borde);
+    border-radius: 8px;
+    padding: 1.25rem;
+    margin-bottom: 2rem;
+}
+
+.barra-filtros {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.barra-filtros .campo {
+    flex: 1 1 200px;
+    margin-bottom: 0;
+}
+
+.resumen-resultados {
+    margin-bottom: 0;
+    font-weight: bold;
+    color: var(--color-texto-suave);
+}
+
 .catalogo-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 1.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    gap: 1.5rem;
 }
 
 .tarjeta {
+    background-color: #ffffff;
     border: 1px solid var(--color-borde);
     border-radius: 8px;
-    padding: 1rem;
+    padding: 1.25rem;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Variante reutilizable + expansión en Grid (RA2) */
+.tarjeta-destacada {
+    border: 2px solid var(--color-primario);
+    background-color: var(--color-destacado-bg);
+}
+
+@media (min-width: 680px) {
+    .tarjeta-destacada {
+        grid-column: span 2;
+    }
+}
+
+.etiqueta-destacada {
+    display: inline-block;
+    align-self: flex-start;
+    background-color: var(--color-primario-oscuro);
+    color: #ffffff;
+    font-size: 0.85rem;
+    font-weight: bold;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    margin-bottom: 0.6rem;
 }
 
 .tarjeta img {
     width: 100%;
-    height: 200px;
+    height: 180px;
     object-fit: cover;
     border-radius: 4px;
-}
-
-.tarjeta h3 {
-    margin: 1rem 0 0.5rem 0;
+    border: 1px solid var(--color-borde);
+    margin-bottom: 0.85rem;
+    background-color: var(--color-secundario);
 }
 
 .tarjeta .precio {
     font-weight: bold;
-    color: var(--color-primario);
-    margin-top: auto;
-    padding-top: 1rem;
+    font-size: 1.1rem;
+    color: var(--color-primario-oscuro);
+    margin-top: 0.5rem;
 }
 
-.alerta-prototipo {
-    background-color: #fff3cd;
-    border: 1px solid #ffeeba;
-    padding: 1rem;
-    margin-bottom: 1.5rem;
+.tarjeta .btn {
+    margin-top: 0.75rem;
+    width: 100%;
+}
+
+/* Paginación numérica (RA2 + RA5) */
+.paginacion {
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.pagina-actual {
+    display: inline-block;
+    padding: 0.6rem 1rem;
+    font-weight: bold;
+    background-color: var(--color-primario-oscuro);
+    color: #ffffff;
+    border: 2px solid var(--color-primario-oscuro);
     border-radius: 4px;
+    text-decoration: underline;
 }
 
-/* Flexbox: Carrito */
+/* ==========================================================================
+   Página de Detalle (detalle.html)
+   ========================================================================== */
+.detalle-contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    background-color: var(--color-secundario);
+    border: 1px solid var(--color-borde);
+    border-radius: 8px;
+    padding: 1.5rem;
+}
+
+.detalle-imagen {
+    flex: 1 1 320px;
+}
+
+.detalle-imagen img {
+    width: 100%;
+    max-height: 340px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid var(--color-borde);
+    background-color: #ffffff;
+}
+
+.detalle-info {
+    flex: 1 1 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.lista-caracteristicas {
+    margin: 1rem 0 1.25rem 1.5rem;
+}
+
+.lista-caracteristicas li {
+    margin-bottom: 0.4rem;
+}
+
+.tarifa-destacada {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: var(--color-primario-oscuro);
+    margin-bottom: 1.25rem;
+}
+
+/* ==========================================================================
+   Página de Mi Reserva / Carrito (carrito.html)
+   ========================================================================== */
+.lista-reserva {
+    border: 1px solid var(--color-borde);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+}
+
 .fila-carrito {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
     border-bottom: 1px solid var(--color-borde);
 }
 
-footer {
+.fila-carrito:last-child {
+    border-bottom: none;
+}
+
+.info-item {
+    flex: 2 1 240px;
+    display: flex;
+    flex-direction: column;
+}
+
+.tarifa-unitaria {
+    font-size: 0.9rem;
+    color: var(--color-texto-suave);
+}
+
+.controles-cantidad {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.controles-cantidad .btn {
+    padding: 0.35rem 0.75rem;
+}
+
+.subtotal {
+    font-weight: bold;
+    min-width: 80px;
+    text-align: right;
+}
+
+.fila-total {
     background-color: var(--color-secundario);
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--color-primario-oscuro);
+}
+
+.acciones-carrito {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+/* ==========================================================================
+   Formularios Accesibles (login.html y formulario.html)
+   ========================================================================== */
+.contenedor-estrecho {
+    max-width: 520px;
+    margin: 0 auto;
+}
+
+.contenedor-formulario {
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+fieldset {
+    border: 1px solid var(--color-borde);
+    border-radius: 8px;
+    padding: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+legend {
+    font-weight: bold;
+    color: var(--color-primario-oscuro);
+    padding: 0 0.5rem;
+}
+
+.sub-fieldset {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    background-color: var(--color-secundario);
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+.campo label {
+    font-weight: bold;
+    margin-bottom: 0.35rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="date"],
+input[type="search"],
+select,
+textarea {
+    width: 100%;
+    padding: 0.6rem 0.75rem;
+    font-family: inherit;
+    font-size: 1rem;
+    color: var(--color-texto);
+    background-color: #ffffff;
+    border: 2px solid var(--color-borde);
+    border-radius: 4px;
+}
+
+.texto-ayuda {
+    font-size: 0.875rem;
+    color: var(--color-texto-suave);
+    margin-top: 0.3rem;
+}
+
+.opcion-linea {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 0.5rem;
+}
+
+.opcion-linea input[type="radio"],
+.opcion-linea input[type="checkbox"] {
+    width: 1.15rem;
+    height: 1.15rem;
+    accent-color: var(--color-primario);
+}
+
+/* ==========================================================================
+   Pie de Página Común (RA2)
+   ========================================================================== */
+footer {
+    background-color: var(--color-primario-oscuro);
+    color: #ffffff;
     text-align: center;
-    padding: 1rem;
+    padding: 1.25rem 1.5rem;
     margin-top: auto;
+}
+
+footer p {
+    margin-bottom: 0;
 }
