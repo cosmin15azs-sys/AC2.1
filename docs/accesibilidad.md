@@ -14,11 +14,12 @@ Este documento recoge las verificaciones de accesibilidad WCAG 2.1 Nivel AA real
 
 ## Evidencias visuales de comprobación
 
-*(Nota: sustituir estas rutas por las 3 capturas reales tomadas tras aplicar las correcciones)*
 
 1. **Comprobación de contraste (Foco `#8a3600` y bordes `#767676` sobre `#ffffff` >= 3:1):**  
-   `![Evidencia de contraste WCAG](evidencia_contraste.png)`
+   ![Evidencia de contraste WCAG](evidencia_contraste.png)
+
 2. **Navegación por teclado y foco visible activo con tecla Tab:**  
-   `![Evidencia de foco visible](evidencia_foco.png)`
+   ![Evidencia de foco visible](evidencia_foco.png)
+   
 3. **Ampliación del navegador al 200% sin pérdida de contenido ni solapamientos:**  
-   `![Evidencia de zoom 200%](evidencia_zoom200.png)`
+   ![Evidencia de zoom 200%](evidencia_zoom200.png)
