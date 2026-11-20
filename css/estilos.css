@@ -542,3 +542,52 @@ footer {
 footer p {
     margin-bottom: 0;
 }
+
+/* ==========================================================================
+   Punto de ruptura útil para pantallas pequeñas / móvil (<= 600px)
+   ========================================================================== */
+@media (max-width: 600px) {
+    /* Cabecera apilada y centrada */
+    .contenedor-cabecera {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        justify-content: center;
+    }
+
+    /* Reorganización de filas en carrito.html para evitar apretones */
+    .fila-carrito {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.75rem;
+    }
+
+    .info-item {
+        flex: auto;
+    }
+
+    .controles-cantidad {
+        justify-content: space-between;
+        background-color: var(--color-secundario);
+        padding: 0.5rem;
+        border-radius: 4px;
+    }
+
+    .subtotal {
+        text-align: left;
+        font-size: 1.1rem;
+        border-top: 1px dashed var(--color-borde);
+        padding-top: 0.5rem;
+    }
+
+    /* Botones de acción a ancho completo para uso táctil */
+    .acciones-carrito {
+        flex-direction: column;
+    }
+
+    .acciones-carrito .btn {
+        width: 100%;
+    }
+}
