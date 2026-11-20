@@ -4,15 +4,21 @@
    ========================================================================== */
 
 :root {
-    --color-primario: #0056b3;        /* Contraste 7,04:1 sobre blanco */
-    --color-primario-oscuro: #003366; /* Contraste 12,63:1 sobre blanco */
+    --color-primario: #0056b3;
+    /* Contraste 7,04:1 sobre blanco */
+    --color-primario-oscuro: #003366;
+    /* Contraste 12,63:1 sobre blanco */
     --color-fondo: #ffffff;
     --color-secundario: #f4f6f9;
     --color-destacado-bg: #eef5fc;
-    --color-texto: #222222;           /* Contraste 15,91:1 sobre blanco */
-    --color-texto-suave: #4a4a4a;     /* Contraste 8,86:1 sobre blanco */
-    --color-borde: #767676;           /* Contraste 4,54:1 sobre blanco (> 3:1) */
-    --color-foco: #8a3600;            /* Contraste 6,41:1 sobre blanco (> 3:1) */
+    --color-texto: #222222;
+    /* Contraste 15,91:1 sobre blanco */
+    --color-texto-suave: #4a4a4a;
+    /* Contraste 8,86:1 sobre blanco */
+    --color-borde: #767676;
+    /* Contraste 4,54:1 sobre blanco (> 3:1) */
+    --color-foco: #8a3600;
+    /* Contraste 6,41:1 sobre blanco (> 3:1) */
     --color-aviso-bg: #fff8e6;
     --color-aviso-borde: #8a5a00;
 }
@@ -42,6 +48,13 @@ body {
     display: flex;
     flex-direction: column;
 }
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
 
 /* ==========================================================================
    Cabecera y Navegación Principal (Flexbox)
